@@ -1,0 +1,45 @@
+@import "tailwindcss";
+
+@theme {
+  --color-indigo-500: #3b82f6;
+  --color-indigo-600: #2563eb;
+  --color-slate-50: #f9fafb;
+  --color-slate-100: #f3f4f6;
+  --color-slate-200: #e5e7eb;
+  --color-blue-50: #eff6ff;
+  --color-blue-100: #dbeafe;
+  --color-blue-800: #1e40af;
+}
+
+@layer base {
+  body {
+    background-color: #f3f4f6;
+    color: #111827;
+    margin: 0;
+    font-family: ui-sans-serif, system-ui, -apple-system, sans-serif;
+  }
+}
+
+@layer components {
+  .nav-btn {
+    @apply flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all text-gray-600 hover:bg-gray-100;
+  }
+  
+  .nav-btn.active {
+    @apply bg-blue-100 border border-blue-200 text-blue-800 font-medium shadow-sm;
+  }
+
+  .premium-card {
+    @apply bg-white border border-gray-200 rounded-lg p-4 shadow-sm;
+  }
+}
+
+/* 消息动画 */
+.animate-in {
+  animation: animate-in 0.3s ease-out;
+}
+
+@keyframes animate-in {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

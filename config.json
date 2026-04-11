@@ -1,0 +1,66 @@
+{
+  "server": {
+    "host": "127.0.0.1",
+    "port": 5001
+  },
+  "llama": {
+    "executable": "llama-server.exe",
+    "host": "127.0.0.1",
+    "port": 8080,
+    "ctx_size": 20480,
+    "models": {
+      "default": "mistral-7b-v0.1.Q4_K_M.gguf"
+    }
+  },
+  "whisper": {
+    "executable": "whisper-server.exe",
+    "host": "127.0.0.1",
+    "port": 8081,
+    "tools": [
+      {
+        "name": "whisper-server",
+        "exe": "whisper-server.exe",
+        "port": 8081
+      },
+      {
+        "name": "whisper-stream",
+        "exe": "whisper-stream.exe",
+        "port": 8082
+      }
+    ]
+  },
+  "tts": {
+    "host": "127.0.0.1",
+    "port": 8083,
+    "whisper_cli_executable": "whisper-cli.exe",
+    "whisper_default_model": "whisper_base.bin",
+    "models": {
+      "qwen3-tts": {
+        "path": "Qwen3-TTS",
+        "voices_dir": "tts_results/voice_qwen3"
+      },
+      "faster-qwen3-tts": {
+        "path": "Qwen3-TTS",
+        "voices_dir": "tts_results/voice_qwen3"
+      },
+      "qwen3-tts-0.6b": {
+        "path": "Qwen3-TTS-0.6B",
+        "voices_dir": "tts_results/voice_qwen3"
+      }
+    }
+  },
+  "directories": {
+    "dir_llama": "llama.cpp",
+    "dir_whisper": "whisper.cpp",
+    "local_Models": "_Models",
+    "tts_models": "tts_models",
+    "tts_voices": "tts_results/Voices",
+    "tts_results": "tts_results/results",
+    "tts_temp": "tts_results/temp",
+    "logs": "logs"
+  },
+  "monitoring": {
+    "enabled": false,
+    "port": 9090
+  }
+}
