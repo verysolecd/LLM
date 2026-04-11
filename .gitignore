@@ -1,47 +1,49 @@
 # 虚拟环境
 .venv/
-env/
-.venv2/
+Offline_Packages/*
 !Offline_Packages
-Offline_Packages/
-
-lfs/
+Docs/*
 # AI 环境
 .agents/
 gemini/
 .agents/rules/
 
 # ========================================
-# 保留目录结构，忽略目录下所有文件（支持多级目录）
-# 通用格式：
 #   dir/**/*    - 忽略所有文件
 #   !dir/       - 不忽略目录本身
 #   !dir/**/    - 不忽略所有子目录
 # ========================================
 
-# 模型文件目录
+
+
+# 模型文件目录 - 保留文件夹结构，忽略所有文件
 _Models/**/*
 !_Models/
 !_Models/**/
 
-tts_models/**/*
+
 !tts_models/
-!tts_models/Qwen3-TTS
-!tts_modelsQwen3-TTS-0.6B
+tts_models/Qwen3-TTS/*
+!tts_models/Qwen3-TTS/
+tts_models/Qwen3-TTS-0.6B/*
+!tts_models/Qwen3-TTS-0.6B/
 
 # 日志目录
 logs/**/*
 !logs/
 !logs/**/
+*.log
 
 # TTS 结果目录
-tts_results/**/*
+tts_results/results/*
+tts_results/temp/
+!tts_results/voice_qwen3/*
 !tts_results/
 !tts_results/results/
-!tts_results/voice_qwen3/
+!tts_results/voice_qwen3
 
 
-# 可执行文件目录
+# 可执行文件目录 - 保留文件夹结构，忽略所有文件
 llama.cpp/**/*
 !llama.cpp/
 !llama.cpp/**/
@@ -49,7 +51,6 @@ llama.cpp/**/*
 whisper.cpp/**/*
 !whisper.cpp/
 !whisper.cpp/**/
-
 
 # Python编译产物
 __pycache__/
@@ -63,12 +64,6 @@ __pycache__
 src/web-ui/node_modules
 node_modules
 node_modules/*
-
-
-
-# 日志文件
-logs/
-*.log
 
 # 环境变量文件
 .env
@@ -101,3 +96,6 @@ coverage/
 tmp/
 temp/
 scratch/
+
+
+!.gitkeep
